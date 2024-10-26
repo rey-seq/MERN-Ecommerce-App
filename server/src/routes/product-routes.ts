@@ -9,6 +9,7 @@ import { productSchema } from "../schemas/product-schemas";
 
 export const productRoute = Router();
 
+productRoute.get("/product-count", product.GetTotalProductsByCategory);
 productRoute.get("/all", product.GetAllProducts);
 productRoute.get("/featured", product.GetFeaturedProducts);
 productRoute.post(

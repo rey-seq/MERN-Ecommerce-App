@@ -18,6 +18,12 @@ const productSchema = new mongoose.Schema<IProduct>(
     image: {
       type: String,
     },
+    category: {
+      type: String,
+    },
+    categoryDescription: {
+      type: String,
+    },
     isFeatured: {
       type: Boolean,
       default: false,

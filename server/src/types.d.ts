@@ -20,6 +20,7 @@ export interface IProduct extends Document {
   description: string;
   image: string;
   category: string;
+  categoryDescription: string;
   isFeatured: boolean;
 }
 

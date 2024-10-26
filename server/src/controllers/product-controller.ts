@@ -51,7 +51,8 @@ export const GetFeaturedProducts = AsyncWrapper(
 
 export const CreateProduct = AsyncWrapper(
   async (req: Request, res: Response) => {
-    const { name, description, price, image, category } = req.body;
+    const { name, description, price, image, category, categoryDescription } =
+      req.body;
 
     let cloudinaryResponse = null;
 
@@ -68,6 +69,7 @@ export const CreateProduct = AsyncWrapper(
         ? cloudinaryResponse.secure_url
         : "",
       category,
+      categoryDescription,
     });
 
     res.status(HttpStatusCode.CREATED).json({
@@ -143,6 +145,40 @@ export const GetRecommendedProducts = AsyncWrapper(
     res.status(HttpStatusCode.OK).json({
       success: true,
       data: products,
+    });
+  }
+);
+
+export const GetTotalProductsByCategory = AsyncWrapper(
+  async (req: Request, res: Response) => {
+    const categories = await Product.aggregate([
+      {
+        $group: {
+          _id: {
+            name: "$category",
+            description: "$categoryDescription",
+          },
+          productCount: { $sum: 1 },
+        },
+      },
+      {
+        $sort: { productCount: -1 },
+      },
+      {
+        $limit: 8,
+      },
+      {
+        $project: {
+          _id: 0,
+          category: "$_id",
+          productCount: 1,
+        },
+      },
+    ]);
+
+    res.status(HttpStatusCode.OK).json({
+      success: true,
+      data: categories,
     });
   }
 );
