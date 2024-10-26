@@ -17,6 +17,8 @@ export const ErrorMessages = {
   INVALID_PASSWORD: "The password you entered is incorrect. Please try again.",
   INVALID_TOKEN: "The token you entered is invalid. Please try again.",
   UNAUTHORIZED: "You are not authorized to perform this action.",
+  INVALID_COUPON: "Coupon code is invalid",
+  COUPON_EXPIRED: "Coupon code is expired",
 };
 
 export enum HttpStatusCode {

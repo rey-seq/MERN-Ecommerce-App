@@ -4,7 +4,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import { ParsedEnvVariables } from "./config";
 import { ErrorMiddleware } from "./middlewares";
-import { authRoute } from "./routes";
+import { authRoute, couponRoute } from "./routes";
 
 const app: Application = express();
 
@@ -21,6 +21,7 @@ app.use(cookieParser());
 app.disable("x-powered-by");
 
 app.use("/api/v1/auth", authRoute);
+app.use("/api/v1/coupon", couponRoute);
 
 app.use(ErrorMiddleware);
 
