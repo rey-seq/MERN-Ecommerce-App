@@ -4,7 +4,9 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const EnvVariables = z.object({
-  NODE_ENV: z.enum(["development", "production"]).default("development"),
+  NODE_ENV: z
+    .enum(["development", "production", "test"])
+    .default("development"),
   PORT: z.string().default("3000"),
   MONGO_DB_URI: z.string().min(1),
   ACCESS_TOKEN_SECRET: z.string().min(10),

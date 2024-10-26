@@ -30,3 +30,13 @@ export interface ICoupon extends Document {
   isActive: boolean;
   userId: ObjectId;
 }
+
+type JWTPayloadType = Omit<ICustomer, "password">;
+
+declare global {
+  namespace Express {
+    interface Request {
+      user: JWTPayloadType;
+    }
+  }
+}

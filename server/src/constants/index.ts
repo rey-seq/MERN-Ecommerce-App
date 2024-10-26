@@ -1,11 +1,22 @@
 export const SuccessMessages = {
   MONGO_CONNECTION_SUCCESS: "MongoDB connected successfully",
+  SIGNOUT_SUCCESS: "You have been successfully signed out.",
+  SIGNIN_SUCCESS: "Welcome back! You have signed in successfully.",
+  SIGNUP_SUCCESS: "Registration successful! Welcome aboard!",
+  REFRESH_TOKEN_SUCCESS: "Refresh token successfully",
 };
 export const ErrorMessages = {
   MONGO_ENV_NOT_DEFINED: "MONGO_DB_URI environment variable not defined",
   MONGO_CONNECTION_ERROR: "MongoDB connection error: ",
   INVALID_ID: "The ID you entered is invalid.",
   INTERNAL_SERVER_ERROR: "Oops! Something went wrong. Please try again later.",
+  USER_NOT_FOUND:
+    "We couldn't find a user with that information. Please check and try again.",
+  USER_ALREADY_EXISTS:
+    "An account with this email already exists. Please try using a different one.",
+  INVALID_PASSWORD: "The password you entered is incorrect. Please try again.",
+  INVALID_TOKEN: "The token you entered is invalid. Please try again.",
+  UNAUTHORIZED: "You are not authorized to perform this action.",
 };
 
 export enum HttpStatusCode {
