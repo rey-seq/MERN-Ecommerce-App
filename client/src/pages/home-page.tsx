@@ -1,5 +1,13 @@
-import SiteTopCategories from "@/components/site/top-categories";
+import SiteTopCategories from "@/components/site/site-categories";
+import SiteHero from "@/components/site/site-hero";
+import SiteServices from "@/components/site/site-services";
 
 export default function HomePage() {
-  return <SiteTopCategories />;
+  return (
+    <>
+      <SiteHero />
+      <SiteServices />
+      <SiteTopCategories />
+    </>
+  );
 }

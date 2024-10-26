@@ -9,7 +9,7 @@ import {
 } from "../ui/card";
 import { GetProductsDetailsByCategory } from "@/services/queries";
 
-export default function SiteTopCategories() {
+export default function SiteCategories() {
   const { data: categories } = GetProductsDetailsByCategory();
 
   return (
