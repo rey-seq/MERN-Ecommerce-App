@@ -10,10 +10,9 @@ export const AuthMiddleware: RequestHandler = async (req, res, next) => {
   const accessToken = req.cookies.accessToken;
 
   if (!accessToken) {
-    throw new AppError(
-      ErrorMessages.INVALID_TOKEN,
-      HttpStatusCode.UNAUTHORIZED
-    );
+    return res
+      .status(HttpStatusCode.UNAUTHORIZED)
+      .json({ message: ErrorMessages.UNAUTHORIZED });
   }
 
   try {
@@ -26,6 +25,7 @@ export const AuthMiddleware: RequestHandler = async (req, res, next) => {
     );
 
     if (!existingCustomer) {
+      console.log("error12");
       throw new AppError(
         ErrorMessages.INVALID_TOKEN,
         HttpStatusCode.UNAUTHORIZED

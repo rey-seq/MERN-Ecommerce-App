@@ -2,7 +2,7 @@ import { Button } from "../ui/button";
 
 export default function SiteHero() {
   return (
-    <section className="flex h-[50vh] w-full items-center justify-center">
+    <section className="flex h-[40vh] w-full items-center justify-center">
       <div className="space-y-5 text-center">
         <h1 className="text-5xl font-bold">
           Your One-Stop Shopping Destination

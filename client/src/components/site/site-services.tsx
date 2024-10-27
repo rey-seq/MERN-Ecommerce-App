@@ -30,29 +30,27 @@ const services = [
 
 export default function SiteServices() {
   return (
-    <section>
-      <div className="container space-y-5 mx-auto">
-        <div>
-          <h1 className="text-2xl font-bold">Our Services</h1>
-          <p className="text-gray-500 font-bold">
-            Your satisfaction is our priority.
-          </p>
-        </div>
-        <div className="grid sm:grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-4">
-          {services.map((service) => (
-            <Card className="cursor-pointer">
-              <CardHeader>
-                <CardTitle>{service.icon}</CardTitle>
-                <CardTitle className="text-xl font-bold">
-                  {service.title}
-                </CardTitle>
-                <CardDescription className="font-bold text-sm">
-                  {service.description}
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          ))}
-        </div>
+    <section className="py-10">
+      <div className="py-4">
+        <h1 className="text-2xl font-bold">Our Services</h1>
+        <p className="text-gray-500 font-bold">
+          Your satisfaction is our priority.
+        </p>
+      </div>
+      <div className="grid sm:grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-4">
+        {services.map((service) => (
+          <Card className="cursor-pointer">
+            <CardHeader>
+              <CardTitle>{service.icon}</CardTitle>
+              <CardTitle className="text-xl font-bold">
+                {service.title}
+              </CardTitle>
+              <CardDescription className="font-bold text-sm">
+                {service.description}
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        ))}
       </div>
     </section>
   );
